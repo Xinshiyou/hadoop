@@ -57,9 +57,9 @@ public class GangliaSink30 extends AbstractGangliaSink {
   @Override
   @SuppressWarnings("unchecked")
   public void init(SubsetConfiguration conf) {
+    conf.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
     super.init(conf);
 
-    conf.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
     Iterator<String> it = (Iterator<String>) conf.getKeys();
     while (it.hasNext()) {
       String propertyName = it.next();
